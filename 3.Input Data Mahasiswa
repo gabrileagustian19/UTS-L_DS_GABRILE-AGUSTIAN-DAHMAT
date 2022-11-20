@@ -1,0 +1,91 @@
+import java.util.ArrayList;
+class Mahasiswa {
+    private String nama;
+    private String kelas;
+    private int npm;
+    private int angkatan;
+
+    public Mahasiswa(String nama, String kelas, int npm, int angkatan) {
+        this.npm = npm;
+        this.nama = nama;
+        this.kelas = kelas;
+        this.angkatan = angkatan;
+    }
+
+    public String getName() {
+        return nama;
+    }
+
+    public void setName(String nameNew) {
+        this.nama = nameNew;
+    }
+
+    public String getKelas() {
+        return kelas;
+    }
+
+    public void setKelas(String kelasNew) {
+        this.kelas = kelasNew;
+    }
+
+    public int getId() {
+        return npm;
+    }
+
+    public void setId(int idNew) {
+        this.npm = idNew;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "Nama     = " + nama +
+                        "\nKelas    = " + kelas +
+                        "\nNIM      = " + npm +
+                        "\nAngkatan = " + angkatan + "\n";
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Mahasiswa> mahasiswa = new ArrayList<>();
+
+        System.out.println( "\n__________________");
+        System.out.println( "Gabrile Agustian Dahmat");
+        System.out.println( "------------------\n");
+
+        System.out.println("\n'''''Data Mahasiswa Magang'''''\n");
+
+        //Data Awal
+        System.out.println("\n______________________________");
+        System.out.println("Data Awal Mahasiswa Magang");
+        System.out.println("===============================");
+        mahasiswa.add(new Mahasiswa("Rendy Jalaludin", "Teknik Industri", 22776589, 2022));
+        mahasiswa.add(new Mahasiswa("Saepudin", "Teknik Informatika", 20992214, 2021));
+        mahasiswa.add(new Mahasiswa("Udin Disna", "Teknik induustri", 22887098, 2018));
+        mahasiswa.add(new Mahasiswa("Gustian", "Teknik Industri", 227867545, 2022));
+        mahasiswa.add(new Mahasiswa("Kurniansyah", "Bisnis Digital", 249996969, 2021));
+
+
+        //Print All
+        mahasiswa.forEach(System.out::println);
+
+        //Remove Data
+        System.out.println("\n\n______________________________");
+        System.out.println("Menghapus Satu Data");
+        System.out.println("===============================");
+        mahasiswa.remove(1);
+        mahasiswa.forEach(System.out::println);
+
+        //Add Data
+        System.out.println("\n\n______________________________");
+        System.out.println("Menambahkan Satu Data");
+        System.out.println("===============================");
+        mahasiswa.add(1, new Mahasiswa("Galih Falbul", "Teknik Industri", 22409985, 2020));
+        mahasiswa.forEach(System.out::println);
+
+        //Jumlah Data
+        System.out.println("\n______________________________");
+        System.out.println("Total Mahasiswa Magang: " + mahasiswa.size() + " Orang");
+        System.out.println("===============================\n");
+
+    }
